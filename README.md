@@ -1,0 +1,1 @@
+# capitalist-main-page
