@@ -14,6 +14,7 @@ export default {
         categorycard: '#45a99b',
         darkblue: '#00008B',
       },
+ 
       fontFamily: {
         custom: ['Stratum', 'Barlow', 'Helvetica', 'Arial', 'sans-serif'],
       },

@@ -21,7 +21,7 @@ const CPLabConsultancy = () => {
       <Navbar />
       <div className="bg-gray-100 min-h-screen font-sans">
         <header className="bg-red-600 text-white py-12 relative">
-          <img src="/public/capitalistlogo.png" alt="Consultancy" className="absolute inset-0 w-full h-full object-cover opacity-30" />
+          <img src="/cpconsultancy.png" alt="Consultancy" className="absolute inset-0 w-full h-full object-cover opacity-30" />
           <div className="relative z-10 container mx-auto px-4 text-center">
             <h1 className="text-4xl font-bold mb-4">CP Lab Consultancy</h1>
             <p className="text-xl">Navigating complexities, enhancing operations, achieving growth</p>
