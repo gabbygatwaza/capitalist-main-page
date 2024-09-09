@@ -17,10 +17,11 @@ const Home = () => {
             <Header />
             <Banner />
             <PromoSection />
-            <AboutUs /> {/* Add About Us section */}
+       {/* Add About Us section */}
             <ProductShowcase />
             <ShippingSection />
             <SectionShowRoom />
+            <AboutUs />
             <Footer />
             <BackToTopButton /> {/* Add the BackToTopButton */}
         </div>

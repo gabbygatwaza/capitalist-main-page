@@ -1,193 +1,120 @@
-import React from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { MonetizationOn, Verified, Visibility, Business } from '@mui/icons-material';
 
 const AboutUs = () => {
-  // About Us Section Animation
-  const aboutControls = useAnimation();
-  const { ref: aboutRef, inView: aboutInView } = useInView({
-    triggerOnce: true,
-  });
-
-  // Our Services Section Animation
-  const servicesControls = useAnimation();
-  const { ref: servicesRef, inView: servicesInView } = useInView({
-    triggerOnce: true,
-  });
-
-  // Supply of High Demand Products Section Animation
-  const productsControls = useAnimation();
-  const { ref: productsRef, inView: productsInView } = useInView({
-    triggerOnce: true,
-  });
-
-  React.useEffect(() => {
-    if (aboutInView) {
-      aboutControls.start({ opacity: 1, x: 0 });
-    }
-    if (servicesInView) {
-      servicesControls.start({ opacity: 1, y: 0 });
-    }
-    if (productsInView) {
-      productsControls.start({ opacity: 1, x: 0 });
-    }
-  }, [
-    aboutInView,
-    servicesInView,
-    productsInView,
-    aboutControls,
-    servicesControls,
-    productsControls,
-  ]);
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
 
   return (
-    <div className="flex flex-col lg:flex-row bg-white text-black p-4 font-custom border-b" id="AboutUs">
-      {/* About Us Section */}
-      <div className="lg:w-1/3 p-4 border">
-        {/* New Div with Image */}
-        <div className="mb-4">
-          <img
-            src="/about1.png"
-            alt="About Us Image"
-            className="w-full h-28 object-cover"
-          />
-        </div>
-
-        {/* Motion Div with Text Content */}
-        <motion.div
-          ref={aboutRef}
-          className="p-4"
-          initial={{ opacity: 0, x: -50 }}
-          animate={aboutControls}
-          transition={{ duration: 0.8 }}
+    <div id="AboutUs" className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 font-custom"> {/* Added id here */}
+      <div className="max-w-7xl mx-auto">
+        <motion.h2 
+          className="text-3xl font-bold text-center mb-12" 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1, transition: { duration: 0.5 } }}
         >
-          <h2 className="text-2xl font-bold text-blue-800 border-b-2 mb-4 border-sky-600">
-            关于我们
-            <br />
-            ABOUT US
-          </h2>
-          <p className="mb-4">
-            我们是一家中非咨询和贸易公司，在中国和非洲都有业务运营。总部位于卢旺达，在湖南长沙设有办公室。
-          </p>
-          <p className="mb-4">
-            "We are a China-Africa consultancy and trading company, operating in
-            both China and Africa. Headquarters in Rwanda, with an office in
-            Changsha, Hunan, we have showroom in Rwanda where we showcase our
-            partners' products and coordinate the market demands."
-          </p>
-          <div className="grid grid-cols-2 gap-6">
-            <img src="/showrooma.jpeg" alt="Showroom 1" className="w-full h-full" />
-            <img src="/showroomb.jpeg" alt="Showroom 2" className="w-full" />
+          About Us
+        </motion.h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div 
+            className="bg-white rounded-lg shadow-lg overflow-hidden" 
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+          >
+            <img src="/about3.jpg" alt="CP LAB Office" className="w-full h-48 object-cover" />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">Who We Are</h3>
+              <p className="text-gray-600">
+                We are a China-Africa consultancy and trading company, operating in both China and Africa. With headquarters in Rwanda and an office in Changsha, Hunan, we have a showroom in Rwanda where we showcase our partners' products and coordinate with market demands.
+              </p>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            className="bg-white rounded-lg shadow-lg overflow-hidden" 
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+          >
+            <img src="/about4.jpg" alt="China-Africa Partnership" className="w-full h-48 object-cover" />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">Our Mission</h3>
+              <p className="text-gray-600">
+                Our mission is wealth creation and fostering profitable China-Africa trade partnerships. We achieve this through providing central and non-central African trade solutions.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+        
+        <motion.div 
+          className="mt-6 bg-white rounded-lg shadow-lg overflow-hidden" 
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+        >
+          <div className="md:flex">
+            <div className="md:flex-shrink-0">
+              <img src="/vision.jpg" alt="Our Vision" className="h-48 w-full object-cover md:w-48" />
+            </div>
+            <div className="p-8">
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">Our Vision</h3>
+              <p className="text-gray-600">
+                Our vision is to be a profitable consulting firm, empowering businesses through innovative solutions and strong trade networks. We strive to be the preferred partner for businesses seeking growth and success in the China-Africa trade corridor.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+        
+        <motion.div 
+          className="mt-6 text-center" 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1, transition: { duration: 0.5 } }}
+        >
+          <h3 className="text-2xl font-bold mb-2">Core Values</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div 
+              className="bg-white p-6 rounded-lg shadow" 
+              whileHover={{ scale: 1.05 }}
+            >
+              <MonetizationOn color="primary" fontSize="large" className="mb-4" />
+              <h4 className="font-semibold text-lg mb-2">Profitability</h4>
+              <p className="text-gray-600">We focus on delivering solutions that drive business growth and financial success for our partners.</p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-white p-6 rounded-lg shadow" 
+              whileHover={{ scale: 1.05 }}
+            >
+              <Verified color="primary" fontSize="large" className="mb-4" />
+              <h4 className="font-semibold text-lg mb-2">Integrity</h4>
+              <p className="text-gray-600">We build trust through honest and transparent business practices, ensuring long-term success.</p>
+            </motion.div>
+
+            <motion.div 
+              className="bg-white p-6 rounded-lg shadow" 
+              whileHover={{ scale: 1.05 }}
+            >
+              <Visibility color="primary" fontSize="large" className="mb-4" />
+              <h4 className="font-semibold text-lg mb-2">Vision</h4>
+              <p className="text-gray-600">We are focused on being a valuable partner in China-Africa trade solutions.</p>
+            </motion.div>
+
+            <motion.div 
+              className="bg-white p-6 rounded-lg shadow" 
+              whileHover={{ scale: 1.05 }}
+            >
+              <Business color="primary" fontSize="large" className="mb-4" />
+              <h4 className="font-semibold text-lg mb-2">Partnership</h4>
+              <p className="text-gray-600">We create strong, sustainable partnerships that drive long-term success in the global market.</p>
+            </motion.div>
           </div>
         </motion.div>
       </div>
-
-      {/* Our Services Section */}
-      <motion.div
-        ref={servicesRef}
-        className="lg:w-1/3 p-4 bg-blue-800 text-white border"
-        initial={{ opacity: 0, y: 50 }}
-        animate={servicesControls}
-        transition={{ duration: 0.8, delay: 0.3 }}
-      >
-        {/* Your existing content here */}
-        <h2 className="text-2xl font-bold mb-4">
-          我们的服务
-          <br />
-          Our Services
-        </h2>
-        <h3 className="text-xl font-semibold mb-2">
-          1. China-Africa Business Consultant
-        </h3>
-        <div className="mb-4 border p-4">
-          <h4 className="font-semibold">
-            Supply Chain Consultancy (供应链咨询):
-          </h4>
-          <p className="text-sm">
-            We design, teach, and consult Chinese factories and suppliers on how
-            to engage with the African market.
-          </p>
-        </div>
-        <div className="mb-4 border p-4">
-          <h4 className="font-semibold">
-            Sales Agents/Distributors (销售代理/经销商):
-          </h4>
-          <p className="text-sm">
-            We act as sales agents and distributors for Chinese manufacturers
-            who want to sell to Africa.
-          </p>
-        </div>
-        <div className="mb-4 mb-4 border p-4">
-          <h4 className="font-semibold">Going to Africa (赴非发展):</h4>
-          <p className="text-sm">
-            We help arrange and coordinate all travel arrangements to Africa,
-            including hotels, transportation, restaurants, translation,
-            information, negotiations, and follow-up.
-          </p>
-        </div>
-        <h3 className="text-xl font-semibold mt-4 mb-2">
-          2. Logistics & Tax Clearance (物流与税务清关)
-        </h3>
-        <ul className="list-disc list-inside border p-4">
-          <li>从中国运往非洲/Shipping from China to Africa</li>
-          <li>非洲境内运输与清关/Inland Transport and Customs Clearance</li>
-          <li>进口服务/Importation Services</li>
-          <li>农产品与矿产品/Agricultural Products and Minerals</li>
-        </ul>
-      </motion.div>
-
-      {/* Supply of High Demand Products Section */}
-      <motion.div
-        ref={productsRef}
-        className="lg:w-1/3 p-4 border"
-        initial={{ opacity: 0, x: 50 }}
-        animate={productsControls}
-        transition={{ duration: 0.8, delay: 0.6 }}
-      >
-        {/* Your existing content here */}
-        <h2 className="text-2xl font-bold text-blue-800 mb-4 border-b-2 border-sky-600">
-          东非高需求产品供应
-          <br />
-          Supply of High Demand Products in East Africa
-        </h2>
-        <div className="mb-4">
-          <h3 className="text-xl font-semibold text-blue-800">Agriculture (农业):</h3>
-          <ul className="list-disc list-inside">
-            <li>Irrigation Technology (灌溉技术)</li>
-            <li>Agricultural Sensors (农业传感器)</li>
-            <li>Animal Tags Managing System (动物标签管理系统)</li>
-          </ul>
-        </div>
-        <div className="mb-4">
-          <h3 className="text-xl font-semibold text-blue-800">Solar Energy (太阳能):</h3>
-          <ul className="list-disc list-inside">
-            <li>Panels (太阳能板)</li>
-            <li>Inverters (逆变器)</li>
-            <li>Battery (电池)</li>
-            <li>Stoves (炉灶)</li>
-          </ul>
-        </div>
-        <div className="mb-4">
-          <h3 className="text-xl font-semibold  text-blue-800">
-            Decorative Materials (装饰材料):
-          </h3>
-          <ul className="list-disc list-inside">
-            <li>Melamine MDF (三聚氰胺中密度纤维板)</li>
-            <li>Gypsum Board (石膏板)</li>
-            <li>WPC Wall Panels (木塑复合墙板)</li>
-            <li>Marine Board (海洋板)</li>
-            <li>PU Stones (聚氨酯石石)</li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-xl font-semibold text-blue-800">Fabrics (面料):</h3>
-          <ul className="list-disc list-inside">
-            <li>Garments Fabrics (服装面料)</li>
-            <li>Furniture Fabrics (家具面料)</li>
-            <li>Shoes & Bags Fabrics (鞋包面料)</li>
-          </ul>
-        </div>
-      </motion.div>
     </div>
   );
 };

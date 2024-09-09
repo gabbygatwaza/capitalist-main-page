@@ -3,7 +3,7 @@ import { Linkedin, Instagram, Facebook, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="bg-black text-white p-8 font-custom"> {/* Add id="footer" */}
+    <footer id="footer" className="bg-black text-white p-8 font-custom">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Stay Connected Section */}
         <div>
@@ -33,17 +33,21 @@ const Footer = () => {
         <div>
           <h2 className="text-lg font-bold mb-4">LEARN</h2>
           <ul className="space-y-2">
-            {[
-              "About Us",
-              "Training & Resources",
-              "Catalogs",
-            ].map((item) => (
-              <li key={item}>
-                <a href="#" className="hover:text-gray-300">
-                  {item}
-                </a>
-              </li>
-            ))}
+            <li>
+              <a href="https://www.cplab.rw/comingsoon" className="hover:text-gray-300">
+                Training & Resources
+              </a>
+            </li>
+            <li>
+              <a href="https://www.showroom.cplab.rw" className="hover:text-gray-300">
+                Catalogs
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-gray-300">
+                About Us
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -51,16 +55,26 @@ const Footer = () => {
         <div>
           <h2 className="text-lg font-bold mb-4">SUPPORT</h2>
           <ul className="space-y-2">
-            {[
-              "Contact Us",
-              "Shipping & Delivery",
-            ].map((item) => (
-              <li key={item}>
-                <a href="#" className="hover:text-gray-300">
-                  {item}
-                </a>
-              </li>
-            ))}
+            <li>
+              <a href="#" className="hover:text-gray-300">
+                Contact Us
+              </a>
+            </li>
+            <li>
+              <a href="tel:+250788875721" className="hover:text-gray-300">
+                Phone Number: 250788875721
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-gray-300">
+                长沙软件园 湖南省长沙市岳麓区高新区麓谷D栋3层004办公室.
+              </a>
+            </li>
+            <li>
+              <a href="tel:+13357145436" className="hover:text-gray-300">
+                湖南才配科技有限公司 13357145436/
+              </a>
+            </li>
           </ul>
         </div>
       </div>

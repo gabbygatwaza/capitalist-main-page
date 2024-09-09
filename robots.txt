@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /private/
+Disallow: /temp/
+Disallow: /test/
+
+User-agent: Googlebot
+Disallow: /no-google/
+
+User-agent: Bingbot
+Disallow: /no-bing/
+
+Sitemap: https://www.cplab.rw/sitemap.xml

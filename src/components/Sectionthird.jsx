@@ -37,10 +37,13 @@ const ShippingSection = () => {
             initial={{ scaleX: 0 }}
             animate={leftSectionInView ? { scaleX: 1 } : {}}
             transition={{ duration: 1, delay: 0.4 }}
-          ></motion.div>
+          ></motion.div >
         </div>
+        <motion.h2 className="text-4xl font-bold text-black">
+           Supply And Logistics
+        </motion.h2>
         <motion.h1
-          className="text-4xl font-bold text-black"
+          className="text-xl font-bold text-gray-600"
           initial={{ opacity: 0, y: -20 }}
           animate={leftSectionInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
@@ -67,7 +70,7 @@ const ShippingSection = () => {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
         >
-          LEARN MORE
+           <a href="https://www.capitalist.rw">LEARN MORE</a>
         </motion.button>
       </motion.div>
 

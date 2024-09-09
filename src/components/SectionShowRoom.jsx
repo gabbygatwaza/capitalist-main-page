@@ -90,7 +90,7 @@ const SectionShowRoom = () => {
             whileHover={{ scale: 1.05 }}
           >
         
-        <a href="https://www.capitalist.rw">Learn More</a>
+        <a href="https://www.showroom.cplab.rw">Learn More</a>
 
           </motion.button>
         </div>

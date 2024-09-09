@@ -4,7 +4,7 @@ import React from 'react';
 const Banner = () => {
   return (
     <div className="bg-red-600 text-white text-center py-2 text-sm font-medium font-custom">
-      WE PROVIDE EXCLUSIVE SHIPPING SERVICES
+     <a href="https://www.capitalist.rw">WE PROVIDE EXCLUSIVE SHIPPING SERVICES</a>
     </div>
   );
 };
